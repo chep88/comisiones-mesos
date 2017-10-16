@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+gem 'cancancan'
 # Use oracle as the database for Active Record
 gem 'activerecord-oracle_enhanced-adapter'
 # Use Puma as the app server
@@ -55,7 +56,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
-  
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
