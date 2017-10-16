@@ -38,7 +38,7 @@ set :repo_url, "git@gitlab.mesos.cl:Mesos/comisiones.git"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
+ set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
 namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
