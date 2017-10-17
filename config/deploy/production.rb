@@ -65,6 +65,8 @@
 role :app, %w{deploy@192.168.5.41}
 role :web, %w{deploy@192.168.5.41}
 role :db,  %w{deploy@192.168.5.41}
+set :deploy_to, "/var/www/comisiones"
+set :branch, "master"
 
 # Define server(s)
 server '192.168.5.41', user: 'deploy', roles: %w{web}
