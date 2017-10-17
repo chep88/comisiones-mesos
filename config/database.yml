@@ -56,6 +56,6 @@ test:
 #
 production:
   <<: *default
-  database: comisiones-mesos_production
-  username: comisiones-mesos
-  password: <%= ENV['COMISIONES-MESOS_DATABASE_PASSWORD'] %>
+  database: //192.168.5.32:1521/TASS.MESOS.CL
+  username: COMISIONES
+  password: COMISIONES
