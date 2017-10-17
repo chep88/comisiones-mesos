@@ -6,11 +6,6 @@ set :repo_url, "git@gitlab.mesos.cl:Mesos/comisiones.git"
 
 
 # Default branch is :master
- #ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-<<<<<<< HEAD
-=======
- #set :branch, "test"
->>>>>>> master
 # Default deploy_to directory is /var/www/my_app_name
 
 
