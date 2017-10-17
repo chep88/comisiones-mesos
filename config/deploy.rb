@@ -10,9 +10,7 @@ set :repo_url, "git@gitlab.mesos.cl:Mesos/comisiones.git"
 
 # Default deploy_to directory is /var/www/my_app_name
  set :deploy_to, "/var/www/comisiones"
-
- set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
- set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+ 
  set :rvm_ruby_version, '2.4.1'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -28,7 +26,8 @@ set :repo_url, "git@gitlab.mesos.cl:Mesos/comisiones.git"
 # append :linked_files, "config/database.yml", "config/secrets.yml"
 
 # Default value for linked_dirs is []
-# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/assets"
+# set :assets_prefix, 'prepackaged-assets'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -38,7 +37,6 @@ set :repo_url, "git@gitlab.mesos.cl:Mesos/comisiones.git"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
- set :normalize_asset_timestamps, %w{app/assets/images app/assets/javascripts app/assets/stylesheets}
 namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
