@@ -70,7 +70,7 @@ set :branch, "master"
 
 # Define server(s)
 server '192.168.5.41', user: 'deploy', roles: %w{web}
-
+set :deploy_to, "/var/www/comisiones"
 # SSH Options
 # See the example commented out section in the file
 # for more options.
