@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016154649) do
+ActiveRecord::Schema.define(version: 20171018134423) do
+
+  create_table "bills", force: :cascade do |t|
+    t.integer "number", precision: 38
+    t.integer "status_id", precision: 38
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "id_empresa_envia", precision: 38
+    t.integer "id_empresa_recepciona", precision: 38
+    t.index ["id_empresa_envia"], name: "i_bills_id_empresa_envia"
+    t.index ["id_empresa_recepciona"], name: "i_bills_id_empresa_recepciona"
+  end
 
   create_table "businesses", force: :cascade do |t|
     t.string "nombre"
@@ -18,6 +29,12 @@ ActiveRecord::Schema.define(version: 20171016154649) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_created", precision: 38
     t.integer "user_updated", precision: 38
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

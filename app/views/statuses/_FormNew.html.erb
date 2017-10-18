@@ -1,0 +1,5 @@
+<%= form_with model: @status, local: true do |f| %>
+  <%= f.label :nombre, "Nombre del Estado" %>
+  <%= f.text_field :nombre %>
+  <%= f.submit "Guardar" %>
+<% end %>
