@@ -7,6 +7,14 @@ class BillsController < ApplicationController
 
   def new
     @bill = Bill.new
+    @year = Year.pluck(:name, :id)
+    @month = Month.pluck(:name, :id)
+    @week = Week.order(name: :asc).pluck(:name, :id)
+    @business = Business.pluck(:nombre, :id)
+    @compania = Business.pluck(:nombre, :id)
+    @detail = Detail.pluck(:name, :id)
+    @document = Document.pluck(:name, :id)
+    @status = Status.pluck(:nombre, :id)
   end
 
   def create

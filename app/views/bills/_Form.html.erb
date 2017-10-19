@@ -1,0 +1,72 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Ingreso de Documentos</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <%= form_with model: @bill, local: true do |f| %>
+    <div class="box-body">
+      <div class="container">
+        <div class="row">
+          <div class="form-group col-lg-3">
+            <%= f.label :id_year, "Año"%>
+            <%= f.select(:id_year,@year,{include_blank: "Seleccione Año"}, {:class => "form-control"}) %>
+          </div>
+          <div class="form-group col-lg-3">
+            <%= f.label :id_month, "Mes" %>
+            <%= f.select(:id_month,@month,{include_blank: "Seleccione Mes"}, {:class => "form-control"}) %>
+          </div>
+          <div class="form-group col-lg-3">
+            <%= f.label :id_weeks, "Semana" %>
+            <%= f.select(:id_weeks,@week,{include_blank: "Seleccione Semana"}, {:class => "form-control"}) %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-lg-3">
+            <%= f.label :id_empresa_envia, "Sucursal" %>
+            <%= f.select(:id_empresa_envia,@business,{include_blank: "Seleccione Sucursal"}, {:class => "form-control"}) %>
+          </div>
+          <div class="form-group col-lg-3">
+            <%= f.label :id_empresa_recepciona, "Compañia" %>
+            <%= f.select(:id_empresa_recepciona,@business,{include_blank: "Seleccione Compañia"}, {:class => "form-control"}) %>
+          </div>
+
+          <div class="form-group col-lg-3">
+            <%= f.label :id_detail, "Detalle" %>
+            <%= f.select(:id_detail,@detail,{include_blank: "Seleccione Detalle"}, {:class => "form-control"}) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-lg-4">
+            <%= f.label :id_document, "Tipo Documento" %>
+            <%= f.select(:id_document,@document,{include_blank: "Seleccione Documento"}, {:class => "form-control"}) %>
+          </div>
+          <div class="form-group col-lg-offset-1 col-lg-4">
+            <%= f.label :status_id, "Estado" %>
+            <%= f.select(:status_id,@status,{include_blank: "Seleccione Estado"}, {:class => "form-control"}) %>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+          <div class="form-group col-lg-4">
+            <%= f.label :date_bill, "Fecha de Factura" %>
+            <%= f.text_field :date_bill, class: "form-control"%>
+          </div>
+
+          <div class="form-group col-lg-offset-1 col-lg-4">
+            <%= f.label :date_pay, "Fecha de Pago" %>
+            <%= f.text_field :date_pay, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  <% end %>
+</div>

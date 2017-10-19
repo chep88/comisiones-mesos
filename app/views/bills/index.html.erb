@@ -5,18 +5,22 @@
     <div class="container">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>
-          Listado de Documentos <%= @prueba %>
-          <!--small>Example 2.0</small-->
-        </h1>
+        <h1>Listado de Documentos <%= @prueba %></h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <!--li><a href="#">Layout</a></li-->
           <li class="active">Carga</li>
         </ol>
       </section>
       <!-- Main content -->
       <section class="content">
+        <div class="row">
+          <div class="col-lg-2">
+            <a href="<%= new_bill_path %>" class="btn btn-block btn-primary">
+					    <span class="fa fa-plus-square-o"></span>
+              Documento
+            </a>
+          </div>
+        </div>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="info-box bg-red">
